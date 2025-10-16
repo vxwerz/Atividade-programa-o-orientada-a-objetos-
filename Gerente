@@ -1,0 +1,21 @@
+// Requisito: Herança - A classe Gerente herda de Funcionario usando 'extends'
+public class Gerente extends Funcionario {
+    
+    // Requisito: Especialização - Atributo private para o bônus (Encapsulamento)
+    private double bonusPercentual;
+
+    // Construtor: Chama super() para inicializar atributos herdados
+    public Gerente(String nome, double salarioBase, String matricula, double bonusPercentual) {
+        // Herança: Chama o construtor da classe pai, Funcionario
+        super(nome, salarioBase, matricula);
+        // Inicializa o atributo próprio
+        this.bonusPercentual = bonusPercentual;
+    }
+
+    // Requisito: Polimorfismo (Sobrescrita) - Implementação da lógica do Gerente
+    @Override
+    public double calcularSalario() {
+        // Requisito da Atividade: salarioBase + (salarioBase * bonusPercentual)
+        return salarioBase + (salarioBase * bonusPercentual);
+    }
+}
