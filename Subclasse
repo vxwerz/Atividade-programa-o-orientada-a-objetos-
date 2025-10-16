@@ -1,0 +1,22 @@
+// Requisito: Herança - A classe Desenvolvedor herda de Funcionario usando 'extends'
+public class Desenvolvedor extends Funcionario {
+    
+    // Requisito: Especialização - Atributo private para horas extras (Encapsulamento)
+    private int horasExtras;
+
+    // Construtor: Chama super() para inicializar atributos herdados
+    public Desenvolvedor(String nome, double salarioBase, String matricula, int horasExtras) {
+        // Herança: Chama o construtor da classe pai, Funcionario
+        super(nome, salarioBase, matricula);
+        // Inicializa o atributo próprio
+        this.horasExtras = horasExtras;
+    }
+
+    // Requisito: Polimorfismo (Sobrescrita) - Implementação da lógica do Desenvolvedor
+    @Override
+    public double calcularSalario() {
+        // Requisito da Atividade: salarioBase + (horasExtras * 50.00)
+        // O acesso a salarioBase é direto, pois ele é protected na classe pai.
+        return salarioBase + (horasExtras * 50.00); 
+    }
+}
