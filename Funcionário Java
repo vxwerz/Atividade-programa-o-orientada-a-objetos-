@@ -1,0 +1,31 @@
+// Requisito: A classe deve ser abstrata.
+public abstract class Funcionario {
+    
+    // Requisito: Atributos nome e salarioBase devem ser protected (Reutilização por Herança)
+    protected String nome;
+    protected double salarioBase;
+    
+    // Requisito: Atributo matricula deve ser private (Encapsulamento)
+    private String matricula;
+
+    // Construtor: Inicializa todos os atributos (protected e private)
+    public Funcionario(String nome, double salarioBase, String matricula) {
+        this.nome = nome;
+        this.salarioBase = salarioBase;
+        this.matricula = matricula;
+    }
+
+    // Método Getter público para o atributo privado 'matricula' (Encapsulamento controlado)
+    public String getMatricula() {
+        return this.matricula;
+    }
+    
+    // Método Getter público para o nome (útil para a impressão final)
+    public String getNome() {
+        return this.nome;
+    }
+
+    // Requisito: Método calcularSalario() deve ser public abstract (Polimorfismo por Sobrescrita)
+    // Este método não tem corpo; ele apenas define que as subclasses DEVEM implementá-lo.
+    public abstract double calcularSalario();
+}
